@@ -1,0 +1,338 @@
+/* Importação da Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* ---------------------------------
+   PALETA DE CORES "SOLAR"
+   ---------------------------------
+*/
+:root {
+    --cor-fundo: #F9F9F9;
+    --cor-primaria: #0A4A5A; /* Azul-Petróleo (Oceano) */
+    --cor-acento: #F3A712;  /* Dourado (Sol) */
+    --cor-texto: #333333;
+    --cor-texto-claro: #555;
+    --cor-branco: #FFFFFF;
+    --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------------------------------
+   ANIMAÇÕES
+   ---------------------------------
+*/
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+    animation: fadeInPage 0.6s ease-out forwards;
+}
+
+/* Classe para o "Scroll Reveal" */
+.card.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* ---------------------------------
+   Reset Básico
+   ---------------------------------
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    overflow-x: hidden; /* Previne scroll horizontal das animações */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 1. Navbar */
+.navbar {
+    background-color: var(--cor-branco);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav li {
+    margin-left: 1.5rem;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: var(--cor-acento);
+}
+
+/* 2. Seção Hero */
+.hero {
+    height: 60vh;
+    /* IMAGEM ESTÁTICA E FUNCIONAL */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjUyOXwwfDF8c2VhcmNofDJ8fHRyYXZlbCUyMGxhbmRzY2FwZXxlbnwwfHx8fDE3MzU3MDU0NTR8MA&ixlib=rb-4.0.3&q=80&w=1920');
+    background-size: cover;
+    background-position: center;
+    color: var(--cor-branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Botão Principal (Nova Cor) */
+.btn-primary {
+    background-color: var(--cor-acento);
+    color: var(--cor-texto);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    display: inline-block; /* Para o transform funcionar */
+}
+
+.btn-primary:hover {
+    background-color: #e0990f;
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* 3. Seção: Planejamento */
+.planning-section {
+    background-color: var(--cor-branco);
+    padding: 3rem 0;
+    margin: -3rem auto 0 auto;
+    position: relative;
+    z-index: 50;
+    max-width: 1100px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.planning-section h2 {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.planning-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--cor-texto-claro);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--cor-acento);
+    box-shadow: 0 0 0 3px #f3a71233;
+}
+
+.form-group input[type="date"] {
+    color: var(--cor-texto-claro);
+}
+
+/* 4. Seções de Conteúdo e Grid */
+.content-section {
+    padding: 4rem 0;
+}
+
+#experiencias {
+    padding-top: 6rem;
+}
+
+.content-section h2 {
+    font-size: 2.2rem;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.content-section p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--cor-texto-claro);
+    margin-bottom: 2.5rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* 5. Estilo dos Cards */
+.card {
+    background-color: var(--cor-branco);
+    border-radius: 8px;
+    box-shadow: var(--sombra-card);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.card-tag {
+    display: inline-block;
+    background-color: #fdf0d9;
+    color: #b07800;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.card-location {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--cor-texto);
+}
+
+.card-description {
+    color: var(--cor-texto-claro);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.card-footer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+}
+
+.rating {
+    color: var(--cor-acento);
+}
+
+/* 6. Seção Sobre */
+.about-section {
+    background-color: #ebf5f7;
+    text-align: center;
+    border-radius: 8px;
+    padding: 3rem;
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--cor-primaria);
+}
+
+/* 7. Rodapé */
+.footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 2rem;
+}

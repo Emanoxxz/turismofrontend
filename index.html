@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rota Leve - Turismo e Experiências Locais</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🌍 Rota Leve</a>
+            <nav>
+                <ul>
+                    <li><a href="#planejar">Planeje sua Viagem</a></li>
+                    <li><a href="#experiencias">Experiências</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Descubra Culturas. Viva Experiências.</h1>
+            <p>Sua Rota Leve para o autêntico, o local e o inesquecível.</p>
+            <a href="#planejar" class="btn-primary">Planeje sua viagem agora</a>
+        </div>
+    </section>
+
+    <section id="planejar" class="planning-section">
+        <div class="container">
+            <h2><i class="fa-solid fa-plane-departure"></i> Encontre sua próxima aventura</h2>
+            <form class="planning-form" id="planning-form">
+                <div class="form-group">
+                    <label for="origem">Origem</label>
+                    <input type="text" id="origem" placeholder="De onde você sai?">
+                </div>
+                <div class="form-group">
+                    <label for="destino">Destino</label>
+                    <input type="text" id="destino" placeholder="Para onde você vai?">
+                </div>
+                <div class="form-group">
+                    <label for="data">Data</label>
+                    <input type="date" id="data">
+                </div>
+                <div class="form-group">
+                    <label for="passageiros">Passageiros</label>
+                    <input type="number" id="passageiros" value="1" min="1">
+                </div>
+                <button type="submit" class="btn-primary">
+                    <i class="fa-solid fa-magnifying-glass"></i> Buscar
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="experiencias" class="content-section">
+            <h2><i class="fa-solid fa-map-location-dot"></i> Experiências Locais</h2>
+            <p>Viva o destino como um nativo, em cada canto do Brasil e do mundo.</p>
+            <div class="grid-container" id="experiencias-grid">
+                </div>
+        </section>
+
+        <section id="produtos" class="content-section">
+            <h2><i class="fa-solid fa-store"></i> Produtos Regionais</h2>
+            <p>Leve um pedaço da cultura local com você, onde quer que vá.</p>
+            <div class="grid-container" id="produtos-grid">
+                </div>
+        </section>
+
+        <section id="sobre" class="content-section about-section">
+            <h2><i class="fa-solid fa-heart"></i> Nosso Diferencial</h2>
+            <p>Na Rota Leve, mais que turismo, criamos conexões. Nosso foco é 100% na valorização das culturas locais. Cada produto comprado ou experiência vivida apoia diretamente artesãos e guias da região, promovendo um turismo sustentável e autêntico.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Rota Leve - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
