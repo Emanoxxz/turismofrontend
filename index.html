@@ -19,6 +19,13 @@
                     <li><a href="#produtos">Produtos</a></li>
                     <li><a href="#sobre">Sobre Nós</a></li>
                 </ul>
+                <button id="theme-toggle" class="theme-toggle-button">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="cart-button" class="cart-button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-badge" class="cart-badge hidden">0</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -58,32 +65,112 @@
         </div>
     </section>
 
-    <main class="container">
-        <section id="experiencias" class="content-section">
-            <h2><i class="fa-solid fa-map-location-dot"></i> Experiências Locais</h2>
-            <p>Viva o destino como um nativo, em cada canto do Brasil e do mundo.</p>
-            <div class="grid-container" id="experiencias-grid">
-                </div>
-        </section>
+    
+    <div id="resultados-busca-container" class="container hidden">
+    </div>
 
-        <section id="produtos" class="content-section">
-            <h2><i class="fa-solid fa-store"></i> Produtos Regionais</h2>
-            <p>Leve um pedaço da cultura local com você, onde quer que vá.</p>
-            <div class="grid-container" id="produtos-grid">
+    
+    <div id="main-content">
+        <main class="container">
+            <section id="experiencias" class="content-section">
+                <h2><i class="fa-solid fa-map-location-dot"></i> Experiências Locais</h2>
+                <p>Viva o destino como um nativo, em cada canto do Brasil e do mundo.</p>
+                <div class="grid-container" id="experiencias-grid">
                 </div>
-        </section>
+            </section>
 
-        <section id="sobre" class="content-section about-section">
-            <h2><i class="fa-solid fa-heart"></i> Nosso Diferencial</h2>
-            <p>Na Rota Leve, mais que turismo, criamos conexões. Nosso foco é 100% na valorização das culturas locais. Cada produto comprado ou experiência vivida apoia diretamente artesãos e guias da região, promovendo um turismo sustentável e autêntico.</p>
-        </section>
-    </main>
+            <section id="produtos" class="content-section">
+                <h2><i class="fa-solid fa-store"></i> Produtos Regionais</h2>
+                <p>Leve um pedaço da cultura local com você, onde quer que vá.</p>
+                <div class="grid-container" id="produtos-grid">
+                </div>
+            </section>
+
+            <section id="sobre" class="content-section about-section">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2><i class="fa-solid fa-heart"></i> Nosso Diferencial</h2>
+                        <p>Na Rota Leve, mais que turismo, criamos conexões. Nosso foco é 100% na valorização das culturas locais. Cada produto comprado ou experiência vivida apoia diretamente artesãos e guias da região, promovendo um turismo sustentável e autêntico.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/pottery/600/600" alt="Artesanato Local">
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <footer class="footer">
-        <div class="container">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>🌍 Rota Leve</h3>
+                <p>Sua Rota Leve para o autêntico, o local e o inesquecível. Promovendo turismo sustentável.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#planejar">Planeje sua Viagem</a></li>
+                    <li><a href="#experiencias">Experiências</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Suporte</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Entre em Contato</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Siga-nos</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <p>© 2025 Rota Leve - Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Meu Carrinho</h3>
+            <button id="cart-close-btn" class="cart-close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cart-items" class="cart-items">
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <span id="cart-total-price">R$ 0,00</span>
+            </div>
+            <button class="btn-primary checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <div id="details-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close-btn" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+            <img id="modal-image" src="" alt="Detalhe do produto" class="modal-image">
+            <div class="modal-text">
+                <h2 id="modal-title"></h2>
+                <span id="modal-location"></span>
+                <p id="modal-description"></p>
+                <div class="modal-footer">
+                    <span id="modal-price" class="price"></span>
+                    <button id="modal-add-to-cart-btn" class="btn-primary">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="script.js"></script>
 </body>
